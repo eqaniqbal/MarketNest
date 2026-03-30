@@ -1,0 +1,274 @@
+# MarketNest
+
+MarketNest is a full-stack e-commerce marketplace built for Pakistan, allowing buyers to shop across multiple sellers from a single platform. It includes real-time buyer-seller chat, an AI support assistant, coupon management, order tracking, seller analytics, and a full admin panel.
+
+---
+
+## Tech Stack
+
+**Frontend**
+- React 19 with Vite
+- React Router DOM for navigation
+- Framer Motion for animations
+- Recharts for analytics charts
+- Socket.IO Client for real-time chat
+- Axios for API calls
+- React Hot Toast for notifications
+- Lucide React for icons
+
+**Backend**
+- Node.js with Express 5
+- PostgreSQL database via `pg`
+- Socket.IO for real-time messaging
+- JWT for authentication
+- Bcrypt for password hashing
+- Multer for image uploads
+- Express Validator for input validation
+
+---
+
+## Project Structure
+
+```
+marketnest/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── AIChatbot.jsx        # Nesty AI support assistant
+│   │   │   ├── AIChatBubble.jsx     # Floating AI chat button
+│   │   │   ├── ChatBox.jsx          # Buyer-seller real-time chat
+│   │   │   ├── ChatBubble.jsx       # Floating chat button
+│   │   │   ├── Navbar.jsx           # Top navigation bar
+│   │   │   ├── ProductCard.jsx      # Product listing card
+│   │   │   ├── ProtectedRoute.jsx   # Auth route guard
+│   │   │   └── SellerSidebar.jsx    # Seller dashboard sidebar
+│   │   ├── pages/
+│   │   │   ├── Home.jsx             # Landing page with banner slider
+│   │   │   ├── ProductListing.jsx   # Browse all products
+│   │   │   ├── ProductDetail.jsx    # Single product view
+│   │   │   ├── Cart.jsx             # Shopping cart
+│   │   │   ├── Checkout.jsx         # Checkout flow
+│   │   │   ├── OrderConfirmation.jsx
+│   │   │   ├── Wishlist.jsx
+│   │   │   ├── BuyerDashboard.jsx   # Buyer order history
+│   │   │   ├── BuyerLogin.jsx
+│   │   │   ├── BuyerRegister.jsx
+│   │   │   ├── SellerDashboard.jsx  # Seller overview
+│   │   │   ├── SellerAnalytics.jsx  # Sales charts and stats
+│   │   │   ├── SellerCoupons.jsx    # Coupon creation and management
+│   │   │   ├── SellerProfile.jsx
+│   │   │   ├── ProductManagement.jsx
+│   │   │   ├── OrderManagement.jsx
+│   │   │   ├── InventoryManagement.jsx
+│   │   │   ├── SellerLogin.jsx
+│   │   │   ├── SellerRegister.jsx
+│   │   │   ├── AdminDashboard.jsx   # Full admin panel
+│   │   │   └── AdminLogin.jsx
+│   │   ├── utils/
+│   │   │   ├── api.js               # Axios instance
+│   │   │   └── auth.js              # JWT helpers
+│   │   ├── App.jsx
+│   │   └── index.css
+│   └── package.json
+│
+└── backend/
+    ├── routes/
+    │   ├── auth.js                  # Register, login
+    │   ├── products.js              # CRUD, image upload, search
+    │   ├── orders.js                # Place, track, update orders
+    │   ├── cart.js                  # Add, update, remove cart items
+    │   ├── wishlist.js
+    │   ├── chat.js                  # Message history API
+    │   ├── coupons.js               # Create and validate coupons
+    │   ├── analytics.js             # Seller revenue and order stats
+    │   └── admin.js                 # User and platform management
+    ├── middleware/
+    │   └── auth.js                  # JWT verification middleware
+    ├── config/
+    │   └── db.js                    # PostgreSQL connection pool
+    ├── uploads/                     # Stored product images
+    ├── server.js                    # Express + Socket.IO entry point
+    └── package.json
+```
+
+---
+
+## Features
+
+**Buyers**
+- Register and log in
+- Browse products by category, search, and filter
+- View product details with images and reviews
+- Add to cart and wishlist
+- Apply coupon codes at checkout
+- Track orders with live status steps
+- Chat directly with sellers in real time
+- Access Nesty, the AI support assistant
+
+**Sellers**
+- Register with store name and business details
+- Manage products with multiple image uploads
+- View and update order statuses
+- Create and manage discount coupons
+- Monitor revenue and sales through analytics charts
+- Manage inventory stock levels
+- Chat with buyers in real time
+
+**Admin**
+- View all users, sellers, and orders
+- Approve or suspend seller accounts
+- Monitor platform-wide activity
+
+**AI Assistant (Nesty)**
+- Powered by Claude (Anthropic API)
+- Answers questions about orders, returns, delivery, payments
+- Responds in English or Urdu
+- Available 24/7 as a floating chat bubble
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js v18 or higher
+- PostgreSQL 14 or higher
+- npm
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/marketnest.git
+cd marketnest
+```
+
+### 2. Set up the database
+
+Open PostgreSQL and create the database:
+
+```sql
+CREATE DATABASE marketnest;
+```
+
+Then run your schema file to create all tables:
+
+```bash
+psql -U postgres -d marketnest -f schema.sql
+```
+
+### 3. Configure the backend
+
+Go into the backend folder and create a `.env` file:
+
+```bash
+cd backend
+```
+
+Create `.env` with these values:
+
+```
+DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5432/marketnest
+JWT_SECRET=your_secret_key_here
+PORT=5000
+FRONTEND_URL=http://localhost:5173
+ANTHROPIC_API_KEY=your_anthropic_key_here
+```
+
+Install dependencies and start the backend:
+
+```bash
+npm install
+npm run dev
+```
+
+The backend will run on `http://localhost:5000`.
+
+### 4. Configure the frontend
+
+Open a new terminal and go into the frontend folder:
+
+```bash
+cd frontend
+```
+
+Create a `.env` file:
+
+```
+VITE_API_URL=http://localhost:5000
+```
+
+Install dependencies and start the frontend:
+
+```bash
+npm install
+npm run dev
+```
+
+The frontend will run on `http://localhost:5173`.
+
+---
+
+## Environment Variables
+
+### Backend `.env`
+
+| Variable | Description |
+|---|---|
+| `DATABASE_URL` | PostgreSQL connection string |
+| `JWT_SECRET` | Secret key used to sign JWT tokens |
+| `PORT` | Port the backend runs on (default 5000) |
+| `FRONTEND_URL` | Frontend URL for CORS (e.g. http://localhost:5173) |
+| `ANTHROPIC_API_KEY` | API key for the Nesty AI assistant |
+
+### Frontend `.env`
+
+| Variable | Description |
+|---|---|
+| `VITE_API_URL` | Backend API base URL |
+
+---
+
+## API Overview
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register buyer or seller |
+| POST | `/api/auth/login` | Login and receive JWT |
+| GET | `/api/products` | Get all products |
+| POST | `/api/products` | Create product (seller) |
+| GET | `/api/products/:id` | Get single product |
+| GET | `/api/cart` | Get cart items |
+| POST | `/api/cart` | Add item to cart |
+| POST | `/api/orders` | Place an order |
+| GET | `/api/orders/my` | Buyer order history |
+| GET | `/api/chat/:userId` | Get chat history |
+| POST | `/api/chat/send` | Send a message |
+| GET | `/api/coupons` | Get seller coupons |
+| POST | `/api/coupons` | Create a coupon |
+| GET | `/api/analytics` | Seller analytics data |
+| GET | `/api/admin/users` | All users (admin) |
+
+---
+
+## Real-time Chat
+
+MarketNest uses Socket.IO for real-time buyer-seller messaging. Both users join a shared room identified by their sorted user IDs. Messages are delivered instantly and also saved to the database for persistence.
+
+---
+
+## Deployment
+
+For production deployment on AWS:
+
+- **Frontend** — AWS Amplify (auto-deploys from GitHub)
+- **Backend** — AWS Elastic Beanstalk (Node.js platform)
+- **Database** — AWS RDS PostgreSQL
+- **File uploads** — AWS S3
+
+Update `FRONTEND_URL` in your backend environment variables to your Amplify domain, and update `VITE_API_URL` in your frontend to your Elastic Beanstalk URL before deploying.
+
+---
+
+## License
+
+This project is for educational purposes.
