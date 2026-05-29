@@ -32,7 +32,7 @@ services:
     image: node:20-alpine
     container_name: marketnest-frontend-jenkins
     working_dir: /app
-    command: sh -c "npm install && npm run build && npx serve -s dist -l 3000"
+    command: sh -c "VITE_API_URL=http://13.228.25.21:5001/api npm install && npm run build && npx serve -s dist -l 3000"
     ports:
       - "3000:3000"
     depends_on:
