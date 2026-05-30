@@ -78,21 +78,19 @@ def test_05_product_listing_loads(driver):
 def test_06_product_search(driver):
     driver.get(f"{BASE_URL}/products")
     time.sleep(2)
+    driver.find_element(By.XPATH, "//button[contains(text(),'Filters')]").click()
+    time.sleep(1)
     search = driver.find_element(By.CSS_SELECTOR, "input[placeholder='Search products...']")
     search.send_keys("shirt")
     time.sleep(2)
-    body = driver.find_element(By.TAG_NAME, "body").text
-    assert len(body) > 50
+    assert len(driver.find_element(By.TAG_NAME, "body").text) > 50
 
 def test_07_product_filter_by_category(driver):
     driver.get(f"{BASE_URL}/products")
     time.sleep(2)
-    search = driver.find_element(By.CSS_SELECTOR, "input[placeholder='Search products...']")
-    search.clear()
+    driver.find_element(By.XPATH, "//button[contains(text(),'Filters')]").click()
     time.sleep(1)
     select = driver.find_element(By.TAG_NAME, "select")
-    select.click()
-    time.sleep(1)
     options = driver.find_elements(By.TAG_NAME, "option")
     if len(options) > 1:
         options[1].click()
