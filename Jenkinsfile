@@ -21,6 +21,13 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            steps {
+                sh 'docker build -t marketnest-tests ./tests'
+                sh 'docker run --rm --network host marketnest-tests'
+            }
+        }
+
         stage('Verify') {
             steps {
                 sh 'docker compose -f ${COMPOSE_FILE} ps'
