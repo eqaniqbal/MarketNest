@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: eqaniqbal/marketnest-backend
+        env:
+        - name: DATABASE_URL
+          value: postgresql://marketnest_user:marketnest@postgres:5432/marketnest
+        - name: JWT_SECRET
+          value: marketnest_super_secret_key_2024
+        - name: PORT
+          value: "5000"
+        - name: FRONTEND_URL
+          value: http://13.212.12.91
+        - name: GEMINI_API_KEY
+          value: AIzaSyCATFph6lz3DalWZMdA5wqGjnzBLDR5i-M
+        ports:
+        - containerPort: 5000
