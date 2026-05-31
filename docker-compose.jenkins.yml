@@ -19,7 +19,7 @@ services:
       DATABASE_URL: postgresql://marketnest_user:marketnest@db-jenkins:5432/marketnest
       JWT_SECRET: marketnest_super_secret_key_2024
       PORT: 5001
-      FRONTEND_URL: http://13.228.25.21:3000
+      FRONTEND_URL: http://13.212.12.91:3000
       GEMINI_API_KEY: AIzaSyCATFph6lz3DalWZMdA5wqGjnzBLDR5i-M
     ports:
       - "5001:5001"
@@ -32,7 +32,7 @@ services:
     image: node:20-alpine
     container_name: marketnest-frontend-jenkins
     working_dir: /app
-    command: sh -c "export VITE_API_URL=http://13.228.25.21:5001/api && npm install && npm run build && npx serve -s dist -l 3000"
+    command: sh -c "export VITE_API_URL=http://13.212.12.91:5001/api && npm install && npm run build && npx serve -s dist -l 3000"
     ports:
       - "3000:3000"
     depends_on:

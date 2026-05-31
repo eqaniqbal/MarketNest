@@ -68,7 +68,7 @@ export default function Cart() {
   const getImg = (item) => {
     try {
       const arr = typeof item.images === 'string' ? JSON.parse(item.images) : item.images
-      return arr?.[0] ? `http://13.228.25.21${arr[0]}` : null
+      return arr?.[0] ? `http://13.212.12.91${arr[0]}` : null
     } catch { return null }
   }
 

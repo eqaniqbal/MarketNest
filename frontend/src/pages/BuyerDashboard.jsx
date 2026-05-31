@@ -170,7 +170,7 @@ export default function BuyerDashboard() {
                                       try {
                                         const arr = typeof item.product_images === 'string' ? JSON.parse(item.product_images) : item.product_images
                                         return arr?.[0] ? (
-                                          <img src={`http://13.228.25.21${arr[0]}`} alt="" style={{ width: 36, height: 36, borderRadius: 6, objectFit: 'cover', flexShrink: 0 }} />
+                                          <img src={`http://13.212.12.91${arr[0]}`} alt="" style={{ width: 36, height: 36, borderRadius: 6, objectFit: 'cover', flexShrink: 0 }} />
                                         ) : null
                                       } catch { return null }
                                     })()}

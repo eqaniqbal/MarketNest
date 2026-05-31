@@ -316,7 +316,7 @@ export default function AdminDashboard() {
                         <td>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
                             <img
-                              src={(() => { try { const arr = typeof p.images === 'string' ? JSON.parse(p.images) : p.images; return arr?.[0] ? `http://13.228.25.21${arr[0]}` : 'https://via.placeholder.com/44?text=No' } catch { return 'https://via.placeholder.com/44?text=No' } })()}
+                              src={(() => { try { const arr = typeof p.images === 'string' ? JSON.parse(p.images) : p.images; return arr?.[0] ? `http://13.212.12.91${arr[0]}` : 'https://via.placeholder.com/44?text=No' } catch { return 'https://via.placeholder.com/44?text=No' } })()}
                               alt="" style={{ width: 44, height: 44, borderRadius: 8, objectFit: 'cover', border: '1px solid var(--border)' }} />
                             <div>
                               <p style={{ fontWeight: 600, fontSize: '0.9rem' }}>{p.name}</p>

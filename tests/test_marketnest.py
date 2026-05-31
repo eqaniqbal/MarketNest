@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 
-BASE_URL = "http://13.228.25.21"
+BASE_URL = "http://13.212.12.91"
 BUYER_EMAIL = "testbuyer@gmail.com"
 BUYER_PASSWORD = "Test@1234"
 SELLER_EMAIL = "testseller@gmail.com"

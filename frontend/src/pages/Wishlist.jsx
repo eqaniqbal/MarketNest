@@ -47,7 +47,7 @@ export default function Wishlist() {
             {items.map((item, i) => (
               <motion.div key={item.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
                 className="card" style={{ padding: '1rem', overflow: 'hidden' }}>
-                <img src={item.images?.[0] ? `http://13.228.25.21${item.images[0]}` : 'https://via.placeholder.com/220x160?text=No+Img'} alt={item.name}
+                <img src={item.images?.[0] ? `http://13.212.12.91${item.images[0]}` : 'https://via.placeholder.com/220x160?text=No+Img'} alt={item.name}
                   style={{ width: '100%', height: 160, objectFit: 'cover', borderRadius: 8, marginBottom: '0.8rem' }} />
                 <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{item.store_name}</p>
                 <p style={{ fontWeight: 600, marginBottom: '0.4rem', fontSize: '0.92rem' }}>{item.name}</p>

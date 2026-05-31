@@ -175,7 +175,7 @@ export default function OrderConfirmation() {
                 borderBottom: i < items.length - 1 ? '1px solid var(--border)' : 'none'
               }}>
                 <img
-                  src={item.images?.[0] ? `http://13.228.25.21${item.images[0]}` : 'https://via.placeholder.com/50?text=No'}
+                  src={item.images?.[0] ? `http://13.212.12.91${item.images[0]}` : 'https://via.placeholder.com/50?text=No'}
                   alt={item.name}
                   style={{ width: 50, height: 50, objectFit: 'cover', borderRadius: 8, border: '1px solid var(--border)' }}
                 />

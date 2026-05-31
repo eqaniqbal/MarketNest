@@ -22,7 +22,7 @@ export default function ProductCard({ product }) {
         {/* Image */}
         <div style={{ position:'relative', paddingTop:'72%', background:'#F5F4F0', overflow:'hidden' }}>
           <img
-            src={product.images?.[0] ? `http://13.228.25.21${product.images[0]}` : 'https://via.placeholder.com/300x200?text=No+Image'}
+            src={product.images?.[0] ? `http://13.212.12.91${product.images[0]}` : 'https://via.placeholder.com/300x200?text=No+Image'}
             alt={product.name}
             style={{ position:'absolute', top:0, left:0, width:'100%', height:'100%', objectFit:'cover', transition:'transform 0.3s' }}
             onMouseEnter={e => e.target.style.transform='scale(1.05)'}

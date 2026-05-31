@@ -82,7 +82,7 @@ export default function ProductDetail() {
               aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
               <img
-                src={product.images?.[selectedImage] ? `http://13.228.25.21${product.images[selectedImage]}` : 'https://via.placeholder.com/500?text=No+Image'}
+                src={product.images?.[selectedImage] ? `http://13.212.12.91${product.images[selectedImage]}` : 'https://via.placeholder.com/500?text=No+Image'}
                 alt={product.name}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -95,7 +95,7 @@ export default function ProductDetail() {
                     border: `2px solid ${selectedImage === i ? 'var(--primary)' : 'var(--border)'}`,
                     transition: 'border-color 0.2s'
                   }}>
-                    <img src={`http://13.228.25.21${img}`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={`http://13.212.12.91${img}`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                 ))}
               </div>

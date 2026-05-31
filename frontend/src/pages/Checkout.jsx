@@ -472,7 +472,7 @@ export default function Checkout() {
                         borderBottom: i < cartItems.length - 1 ? '1px solid var(--border)' : 'none'
                       }}>
                         <img
-                          src={item.images?.[0] ? `http://13.228.25.21${item.images[0]}` : 'https://via.placeholder.com/52?text=No'}
+                          src={item.images?.[0] ? `http://13.212.12.91${item.images[0]}` : 'https://via.placeholder.com/52?text=No'}
                           alt={item.name}
                           style={{ width: 52, height: 52, objectFit: 'cover', borderRadius: 8, border: '1px solid var(--border)', flexShrink: 0 }}
                         />
@@ -552,7 +552,7 @@ export default function Checkout() {
                   borderBottom: i < cartItems.length - 1 ? '1px solid var(--border)' : 'none'
                 }}>
                   <img
-                    src={item.images?.[0] ? `http://13.228.25.21${item.images[0]}` : 'https://via.placeholder.com/40?text=No'}
+                    src={item.images?.[0] ? `http://13.212.12.91${item.images[0]}` : 'https://via.placeholder.com/40?text=No'}
                     alt={item.name}
                     style={{ width: 40, height: 40, objectFit: 'cover', borderRadius: 6, flexShrink: 0 }}
                   />

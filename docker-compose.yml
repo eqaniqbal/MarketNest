@@ -19,7 +19,7 @@ services:
       DATABASE_URL: postgresql://marketnest_user:marketnest@db:5432/marketnest
       JWT_SECRET: marketnest_super_secret_key_2024
       PORT: 5000
-      FRONTEND_URL: http://13.228.25.21
+      FRONTEND_URL: http://13.212.12.91
       GEMINI_API_KEY: AIzaSyCATFph6lz3DalWZMdA5wqGjnzBLDR5i-M
     ports:
       - "5000:5000"

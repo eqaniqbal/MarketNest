@@ -7,7 +7,7 @@ import { getUser } from '../utils/auth'
 
 let socket = null
 function getSocket() {
-  if (!socket) socket = io('http://13.228.25.21', { transports:['websocket','polling'] })
+  if (!socket) socket = io('http://13.212.12.91', { transports:['websocket','polling'] })
   return socket
 }
 
